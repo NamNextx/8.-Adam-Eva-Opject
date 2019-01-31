@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Adam-Eva</title>
+</head>
+<body>
+
+<script>
+    var Apple = function (weight) {
+        this.weight = weight;
+        this.deDrease = function () {
+
+            this.weight-=1;
+
+        }
+        this.isEmpty = function () {
+            if (this.weight > 0) return true;
+            else return false
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        {
+
+        }
+
+    }
+
+    var Human = function (name, gender, weight,apple) {
+        this.apple=apple;
+        this.name = name;
+        this.gender = gender;
+        this.weight = weight;
+
+        this.isMale = function () {
+            if (this.gender == "Adam") {
+                return true;
+            } else if (this.gender == "Eva") {
+                return false
+            }
+        }
+        this.setGender = function () {
+            this.gender = gender;
+        }
+
+        this.checkApple = function () {
+
+        }
+        this.eat = function () {
+
+            this.apple.deDrease();
+            this.setWeight();
+        }
+        this.say = function (string) {
+
+        }
+        this.getName = function () {
+            return this.name;
+        }
+
+        this.setName = function () {
+            this.name = name;
+        }
+        this.getWeight = function () {
+            return this.weight;
+        }
+        this.setWeight = function () {
+            this.weight++;
+        }
+    }
+
+    var apple = new Apple(10);
+    var Adam = new Human("Adam", "mail", 60,apple);
+    var Eva = new Human("Eva", "femail", 40,apple);
+
+
+    function eat() {
+
+        while (apple.isEmpty()) {
+            Adam.eat(apple);
+            if (apple.isEmpty()==false) break;
+            Eva.eat(apple);
+            if (apple.isEmpty()==false) break;
+        }
+        alert("Apple is empty: "+apple.getWeight());
+        alert("Then eat Apple Eva have: "+Eva.getWeight()+"Dv");
+        alert("Then eat Apple Adam have: "+Adam.getWeight()+"Dv");
+    }
+
+    eat();
+
+
+</script>
+</body>
+</html>
